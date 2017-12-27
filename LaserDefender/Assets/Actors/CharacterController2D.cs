@@ -24,6 +24,10 @@ public class CharacterController2D : MonoBehaviour {
 		transform.position += new Vector3 (movementSpeed * Time.deltaTime, 0, 0);
 	}
 
+	public void ApplyVerticalMovement(float movementSpeed) {
+		transform.position += new Vector3 (0, movementSpeed * Time.deltaTime, 0);
+	}
+
 	public void ApplyScreenRestrictions() {
 		float clampedX = Mathf.Clamp (transform.position.x, minX, maxX);
 		transform.position = new Vector3 (clampedX, transform.position.y, transform.position.z);
