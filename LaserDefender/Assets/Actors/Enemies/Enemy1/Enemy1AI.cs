@@ -2,22 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpaceShipController : CharacterController2D {
+public class Enemy1AI : CharacterController2D {
 
-	// Use this for initialization
+	bool goingRight = true;
+
 	void Start () {
 		CalculateScreenRestrictions (1.0f);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-		if (Input.GetKey (KeyCode.RightArrow)) {
+		if (goingRight) {
 			ApplyHorizontalMovement (speed);
-			ApplyScreenRestrictions ();
-		} else if (Input.GetKey (KeyCode.LeftArrow)) {
+		} else {
 			ApplyHorizontalMovement (-speed);
-			ApplyScreenRestrictions ();
+		}
+		if (transform.position.x >= maxX) {
+			goingRight = false;
+		}
+		if (transform.position.x <= minX) {
+			goingRight = true;
 		}
 	}
 }

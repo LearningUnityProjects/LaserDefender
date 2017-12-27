@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class CharacterController2D : MonoBehaviour {
 
-	float minX;
-	float maxX;
+	public float speed = 5.0f;
+
+	[HideInInspector]
+	public float minX;
+
+	[HideInInspector]
+	public float maxX;
 
 	public void CalculateScreenRestrictions (float padding) {
 		float distance = transform.position.z - Camera.main.transform.position.z;
@@ -15,8 +20,8 @@ public class CharacterController2D : MonoBehaviour {
 		maxX -= padding;
 	}
 
-	public void ApplyHorizontalMovement(float speed) {
-		transform.position += new Vector3 (speed * Time.deltaTime, 0, 0);
+	public void ApplyHorizontalMovement(float movementSpeed) {
+		transform.position += new Vector3 (movementSpeed * Time.deltaTime, 0, 0);
 	}
 
 	public void ApplyScreenRestrictions() {
