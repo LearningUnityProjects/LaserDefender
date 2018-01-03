@@ -14,7 +14,6 @@ public class LaserController : MonoBehaviour {
 	}
 	
 	void FixedUpdate () {
-		Debug.Log ("canFire: " + canFire);
 		if (Input.GetKey (KeyCode.Space) && canFire) {
 			AmmoManager.SpawnAmmo (transform.position, transform.rotation);
 			canFire = false;
