@@ -2,21 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoManager : MonoBehaviour {
+public class EnemyAmmoManager : MonoBehaviour {
 
 	public GameObject ammo = null;
-	public GameObject enemyAmmo = null;
 	public int poolSize = 50;
 
 	public Queue<Transform> ammoQueue = new Queue<Transform> ();
 	private GameObject[] ammoArray;
 
-	public static AmmoManager singleton = null;
+	public static EnemyAmmoManager singleton = null;
 
 	// Use this for initialization
 	void Awake () {
 		if (singleton != null) {
-			Destroy (GetComponent<AmmoManager> ());
+			Destroy (GetComponent<EnemyAmmoManager> ());
 			return;
 		}
 		singleton = this;
