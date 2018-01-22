@@ -216,6 +216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   laserTag: Enemy
+  score: 0
 --- !u!114 &114738735756081944
 MonoBehaviour:
   m_ObjectHideFlags: 1

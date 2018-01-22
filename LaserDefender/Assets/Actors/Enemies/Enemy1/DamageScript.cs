@@ -5,6 +5,7 @@ using UnityEngine;
 public class DamageScript : MonoBehaviour {
 
 	public string laserTag = "Laser";
+	public int score = 25;
 
 	private float destroyDelay = 0.2f;
 
@@ -16,6 +17,7 @@ public class DamageScript : MonoBehaviour {
 				health.healthPoints -= damage.damagePoints;
 				if (health.healthPoints <= 0) {
 					Destroy (gameObject);
+					ScoreManager.getInstance().addScore (score);
 				}
 			}
 			Destroy (coll.gameObject);
