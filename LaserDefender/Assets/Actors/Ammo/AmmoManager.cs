@@ -5,7 +5,6 @@ using UnityEngine;
 public class AmmoManager : MonoBehaviour {
 
 	public GameObject ammo = null;
-	public GameObject enemyAmmo = null;
 	public int poolSize = 50;
 
 	public Queue<Transform> ammoQueue = new Queue<Transform> ();

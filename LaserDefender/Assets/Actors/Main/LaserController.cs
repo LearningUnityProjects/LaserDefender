@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LaserController : MonoBehaviour {
 
+	public AudioClip laserAudio;
 	public float reloadDelay = 0.5f;
 
 	private bool canFire = true;
@@ -15,6 +16,7 @@ public class LaserController : MonoBehaviour {
 	
 	void FixedUpdate () {
 		if (Input.GetKey (KeyCode.Space) && canFire) {
+			AudioSource.PlayClipAtPoint (laserAudio, transform.position);
 			AmmoManager.SpawnAmmo (transform.position, transform.rotation);
 			canFire = false;
 			Invoke ("EnableFire", reloadDelay);

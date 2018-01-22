@@ -217,6 +217,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserTag: Enemy
   score: 0
+  explosion: {fileID: 8300000, guid: d24381b901f3147c9986ae0eb6ec7832, type: 3}
 --- !u!114 &114738735756081944
 MonoBehaviour:
   m_ObjectHideFlags: 1

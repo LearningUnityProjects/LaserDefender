@@ -6,6 +6,7 @@ public class DamageScript : MonoBehaviour {
 
 	public string laserTag = "Laser";
 	public int score = 25;
+	public AudioClip explosion;
 
 	private float destroyDelay = 0.2f;
 
@@ -16,6 +17,7 @@ public class DamageScript : MonoBehaviour {
 			if (damage && health) {
 				health.healthPoints -= damage.damagePoints;
 				if (health.healthPoints <= 0) {
+					AudioSource.PlayClipAtPoint (explosion, transform.position);
 					Destroy (gameObject);
 					ScoreManager.getInstance().addScore (score);
 				}
