@@ -16,7 +16,7 @@ public class EnemyLaserController : MonoBehaviour {
 		if (canFire) {
 			EnemyAmmoManager.SpawnAmmo (transform.position, transform.rotation);
 			canFire = false;
-			Invoke ("EnableFire", reloadDelay);
+			Invoke ("EnableFire", Random.Range(-0.5f, 1.0f) + reloadDelay);
 		}
 	}
 

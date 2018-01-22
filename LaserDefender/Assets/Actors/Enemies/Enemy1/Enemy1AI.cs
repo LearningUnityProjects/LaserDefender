@@ -13,6 +13,7 @@ public class Enemy1AI : CharacterController2D {
 	// Update is called once per frame
 	void Update () {
 		if (goingRight) {
+			Debug.Log ("Going right");
 			ApplyHorizontalMovement (speed);
 		} else {
 			ApplyHorizontalMovement (-speed);

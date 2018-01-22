@@ -38,6 +38,10 @@ GameObject:
   - component: {fileID: 4019102249138548}
   - component: {fileID: 212417964452033550}
   - component: {fileID: 114245603065126268}
+  - component: {fileID: 50209617003836856}
+  - component: {fileID: 58650149323861736}
+  - component: {fileID: 114494222203105888}
+  - component: {fileID: 114462107460406032}
   m_Layer: 0
   m_Name: GreenSpaceShip
   m_TagString: Player
@@ -69,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1733867245224136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4, z: 0}
+  m_LocalPosition: {x: 0, y: -3.58, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4525378777293530}
@@ -103,6 +107,41 @@ Transform:
   m_Father: {fileID: 4019102249138548}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50209617003836856
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733867245224136}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 6
+--- !u!58 &58650149323861736
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733867245224136}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.05864221}
+  serializedVersion: 2
+  m_Radius: 0.4363578
 --- !u!114 &114192336698239394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d7e0d40784e346f7b2e7226a60f3157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 4
   minX: 0
   maxX: 0
 --- !u!114 &114251339086549800
@@ -140,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e6bcd779499432881deb6d7076cb09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadDelay: 0.1
+  reloadDelay: 0.3
 --- !u!114 &114339735119271824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -153,6 +192,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radius: 0.1
+--- !u!114 &114462107460406032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733867245224136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49bef8856bfd14e62a3eade9e6d43a68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 100
+--- !u!114 &114494222203105888
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1733867245224136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ef7a0beeb8ab465399b32503dd38515, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  laserTag: Enemy
 --- !u!114 &114738735756081944
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -164,7 +227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67e6bcd779499432881deb6d7076cb09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reloadDelay: 0.1
+  reloadDelay: 0.3
 --- !u!212 &212417964452033550
 SpriteRenderer:
   m_ObjectHideFlags: 1
